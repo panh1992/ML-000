@@ -3,13 +3,10 @@
 import numpy as np
 cimport numpy as np
 import pandas as pd
-cimport cython
 
-cdef extern from "/content/drive/MyDrive/target_encoding/target_encoding.h":
+cdef extern from "target_encoding.h":
   void target_mean(double *matrix, double *result, const long row, const long col, const long x_index, const long y_index)
 
-@cython.boundscheck(False)
-@cython.wraparound(False)
 cpdef target_mean_v5(data, y_name, x_name):
 
   cdef long length = data.shape[0]
