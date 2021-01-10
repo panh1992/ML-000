@@ -13,6 +13,6 @@ module = Extension('target_encoding',
                    extra_link_args=linker_flags)
 
 setup(
-    name='cython_test',
+    name='target_encoding',
     ext_modules=cythonize(module)
 )
